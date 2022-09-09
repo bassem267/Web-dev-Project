@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+
+{% block title %} Edit Student {% endblock title %}
+
+{% block content %}
+    <h1> <i class="fa-solid fa-pen-to-square"></i> Edit student details</h1>
+
+<div class="studentInfo">
+    <form class="" action="updaterecord/{{ student.id }}" method="post">
+      {% csrf_token %}
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationDefault01">Student's Name</label>
+            <input type="text" name = "studentName" class="form-control" value="{{ student.studentName }}" id="validationDefault01" placeholder="Student's Name" required>
+          </div>
+          <div class="col-md-4 mb-3">
+            <label for="validationDefaultID">ID</label>
+            <div class="input-group">
+              <input type="text" name = "id" class="form-control" value="{{ student.studentID }}" id="validationDefaultID" placeholder="Student's ID" required>
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-6 mb-2">
+            <label for="validationDefault03">Date of birth</label>
+            <input type="date" name = "date" class="form-control" value="{{ student.dateOfBirth }}" id="validationDefault03" placeholder="Date of birth" >
+          </div>
+          <div class="col-md-6 mb-2">
+            <label for="validationDefault04">Gender</label>
+            <select class="form-control" name = "gender" value="{{ student.gender }}" id="validationDefault04">
+              <option selected>{{ student.gender }}</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-md-12 mb-3">
+                <label for="validationDefault05">University</label>
+                <input type="text" name = "uni" class="form-control" value="{{ student.university }}" id="validationDefault05" placeholder="University" required>
+              </div>
+        </div>
+        
+
+        <div class="form-group row">
+            <div class="col-md-12 mb-2">
+                <label for="validationDefault06">Department</label>
+                <select class="form-control" name = "dept" value="{{ student.studentDepartment }}" id="validationDefault06" required>
+                  <option selected>{{ student.studentDepartment }}</option>
+                  <option value="AI">AI -Artificial Intelligence-</option>
+                  <option value="DS">DS -Decision Support-</option>
+                  <option value="IT">IT -Information Technology-</option>
+                  <option value="IS">IS -Information Systems-</option>
+                  <option value="CS">CS -Computer Science-</option>
+                </select>
+              </div>
+          </div>
+
+        <fieldset class="form-group">
+            <div class="row">
+              <legend class="col-form-label col-sm-2 pt-0">Status</legend>
+              <div class="col-sm-10">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios1" id="gridRadios1" value="True" >
+                  <label class="form-check-label" for="gridRadios1">
+                    Active
+                  </label>
+                </div>
+              </div>
+            </div>
+          </fieldset>  
+          
+          <div class="form-row">
+            <div class="col-md-12 mb-2">
+                <label for="validationDefault10">Course 1</label>
+                <select class="form-control" name = "course1"  id="validationDefault10" required>
+                  <option selected>{{ student.course1 }}</option>
+                  {% for x in courses %}
+                    <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-12 mb-2">
+                <label for="validationDefault11">Course 2</label>
+                <select class="form-control" name = "course2" id="validationDefault11" required>
+                  <option selected>{{ student.course2 }}</option>
+                  {% for x in courses %}
+                    <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+          </div>
+
+          <div class="form-row">
+            <div class="col-md-12 mb-2">
+                <label for="validationDefault12">Course 3</label>
+                <select class="form-control" name = "course3" id="validationDefault12" required>
+                  <option selected>{{ student.course3 }}</option>
+                  {% for x in courses %}
+                    <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+              </div>
+          </div>
+
+          <button type="submit" class="btn btn-lg" style="color: whitesmoke; background-color: #007180;" > <i class="fa-solid fa-pen-to-square"></i> Edit Student</button>
+    </form>
+{% endblock content %}

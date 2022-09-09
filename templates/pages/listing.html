@@ -1,0 +1,33 @@
+{% if students %}
+  <div class="student-table">
+    <h1> <i class="fa-solid fa-list"></i> List Of All Searched Active Students</h1>
+
+    <table class="table table-hover table-sm table-bordered">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Date Of birth</th>
+          <th scope="col">University</th>
+          <th scope="col">Gender</th>
+          <th scope="col">Department</th>
+          <th scope="col">Course Reg</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in students %}
+        <tr>
+          <th scope="row">{{x.studentID}}</th>
+          <td>{{x.studentName}}</td>
+          <td>{{x.dateOfBirth}}</td>
+          <td>{{x.university}}</td>
+          <td>{{x.gender}}</td>
+          <td>{{x.studentDepartment}}</td>
+          <td><a href="registration/{{ x.id }}">Register</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <p style="text-align: center">No Student found.</p>
+{% endif %}

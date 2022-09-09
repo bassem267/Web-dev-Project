@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block title %} Course Registration {% endblock title %}
+
+{% block content %}
+<h1> <i class="fa-solid fa-pen-to-square"></i> Register Student Courses</h1>
+
+<div class="studentInfo">
+    <form class="" action="registration_update/{{ student.id }}" method="post">
+      {% csrf_token %}
+        <div class="form-row">
+          <div class="col-md-6 mb-3">
+            <label for="validationDefault01">Student's Name</label>
+            <input type="text" name = "studentName" class="form-control" value="{{ student.studentName }}" id="validationDefault01" placeholder="Student's Name" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="validationDefaultID">ID</label>
+            <div class="input-group">
+              <input type="text" name = "id" class="form-control" value="{{ student.studentID }}" id="validationDefaultID" placeholder="Student's ID" required>
+            </div>
+          </div>
+        </div>
+
+          <div class="form-row">
+                <label for="validationDefault10">Course 1</label>
+                <select class="form-control" name="course1" value="{{ student.course1 }}" id="validationDefault10" required>
+                  <option selected>{{ student.course1 }}</option>
+                  {% for x in courses %}
+                  <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+          </div>
+
+          <div class="form-row">
+                <label for="validationDefault11">Course 2</label>
+                <select class="form-control" name="course2" value="{{ student.course2 }}" id="validationDefault11" required>
+                  <option selected>{{ student.course2 }}</option>
+                  {% for x in courses %}
+                   <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+          </div>
+
+          <div class="form-row">
+                <label for="validationDefault12">Course 3</label>
+                <select class="form-control" name="course3" value="{{ student.course3 }}" id="validationDefault12" required>
+                  <option selected>{{ student.course3 }}</option>
+                  {% for x in courses %}
+                  <option value="{{x.courseName}}">{{x.courseName}}</option>
+                  {% endfor %}
+                </select>
+          </div>
+
+          <div class="form-row">
+              <div class="col-md-12 mb-2 pad" style="margin-right: 15px;margin-top: 20px;">
+                <button type="submit" class="btn btn-lg" onclick="courses_vald()" style="color: whitesmoke; background-color: #007180;" > <i class="fa-solid fa-pen-to-square"></i> Registrate Student</button>
+              </div>
+          </div>
+
+{% endblock content %}

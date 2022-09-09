@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Search Student {% endblock title %}
+
+{% block content %}
+
+  <h1>Search For Student By Name</h1>
+
+  <div class="center">
+    <input id="user-input" class="form-control " placeholder="Search by Name..." aria-label="Search"> <i id="search-icon" class="fa-solid fa-magnifying-glass"></i>
+  </div>
+
+  <div id="replaceable-content">
+    {% include 'pages/listing.html' %}
+  </div>
+  
+{% endblock content %}

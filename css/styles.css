@@ -1,0 +1,242 @@
+body {
+    background-color: white;
+    font-family: 'Bree Serif';
+}
+
+h1 {
+    text-align: justify;
+    font-size: 2.5rem;
+    padding: 1% 2%;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    padding: 1% 2%;
+}
+
+h3 {
+    font-size: 1rem;
+}
+
+.material-icons {
+    font-size: 18px;
+}
+
+
+/* Nav bar */
+
+.navbar-brand {
+    font-size: 2.6rem;
+    font-weight: 200;
+}
+
+.nav-item {
+    padding: 0 8px;
+    font-size: 1.5rem;
+}
+
+.nav-link {
+    font-size: 1.5rem;
+    color: white;
+}
+
+.studentInfo {
+    border-radius: 25px;
+    background: #2ea5b8;
+    color: white;
+    border: 2px solid #a6b7db;
+    font-size: 18px;
+    left: 325px;
+    padding: 1% 5%;
+    margin: 2% 20%;
+}
+
+.courseInfo {
+    border-radius: 25px;
+    background: #2ea5b8;
+    color: white;
+    border: 2px solid #a6b7db;
+    font-size: 18px;
+    left: 325px;
+    padding: 1% 5%;
+    margin: 2% 20%;
+}
+
+.student-table {
+    padding: 1% 5% 1% 5%;
+}
+
+.center {
+    border-radius: 25px;
+    font-size: 22px;
+    background: #2ea5b8;
+    color: white;
+    border: 2px outset;
+    padding: 1% 5%;
+    margin: 2% 20%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 8px;
+    font-size: 22px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+th {
+    background-color: #00a6bd;
+    color: whitesmoke;
+}
+
+button:hover {
+    opacity: 1;
+}
+
+
+/* Float cancel and delete buttons and add an equal width */
+
+.cancelbtn,
+.deletebtn {
+    float: left;
+    width: 50%;
+}
+
+
+/* Add a color to the cancel button */
+
+.cancelbtn {
+    background-color: #ccc;
+    color: black;
+}
+
+
+/* Add a color to the delete button */
+
+.deletebtn {
+    background-color: #e20808;
+}
+
+
+/* Add padding and center-align text to the container */
+
+.container {
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* The Modal (background) */
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    margin-top: 200px;
+    margin-bottom: 100px;
+    margin-right: 350px;
+    margin-left: 450px;
+    width: 40%;
+    height: 40%;
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: #53bfcd;
+    border-radius: 10px;
+    padding-top: 50px;
+    color: rgb(255, 255, 255);
+    font-size: x-large;
+    border-style: groove;
+    border-color: #00a6bd;
+}
+
+
+/* Modal Content/Box */
+
+.modal-content {
+    background-color: #fefefe;
+    font-size: x-large;
+    margin: 5% auto 15% auto;
+    /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%;
+    /* Could be more or less, depending on screen size */
+}
+
+
+/* Style the horizontal ruler */
+
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+
+/* The Modal Close Button (x) */
+
+.close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+    color: #c1bcbc;
+    cursor: pointer;
+}
+
+
+/* Clear floats */
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 20px;
+    background-color: white;
+    padding: 10px;
+}
+
+.grid-container>div {
+    background-color: #53bfcd;
+    border: 2px outset;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 30px;
+}
+
+@keyframes blinker {
+    from {
+        opacity: 1.0;
+    }
+    to {
+        opacity: 0.0;
+    }
+}
+
+.blink {
+    text-decoration: blink;
+    animation-name: blinker;
+    animation-duration: 0.6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+}

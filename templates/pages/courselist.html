@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Courses List {% endblock title %}
+
+{% block content %}
+  <div class="student-table">
+    <h1> <i class="fa-solid fa-list"></i> List Of All Courses</h1>
+
+    <table class="table table-hover table-sm table-bordered">
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Department</th>
+          <th scope="col">Number Of Hours</th>
+          <th scope="col">lecture Day</th>
+          <th scope="col">Hall Number</th>
+          <th scope="col">Options</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for x in courses %}
+        <tr>
+          <th scope="row">{{x.courseID}}</th>
+          <td>{{x.courseName }}</td>
+          <td>{{x.department}}</td>
+          <td>{{x.numberOfHours}}</td>
+          <td>{{x.lectureDay}}</td>
+          <td>{{x.hallNumber}}</td>
+        
+          <td><a href="delete1/{{ x.id }}" onclick="testConfirmDialog() " >Delete</a>
+          <td><a href="update1/{{ x.id }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}
